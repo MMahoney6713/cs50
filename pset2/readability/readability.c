@@ -40,10 +40,6 @@ int main(void)
         }
     }
 
-    //printf("%i letter(s)\n", letter_count);
-    //printf("%i word(s)\n", word_count);
-    //printf("%i sentence(s)\n", sent_count);
-
     int cl_index = calc_cl(letter_count, word_count, sent_count);
 
     if (cl_index < 1)
@@ -106,8 +102,6 @@ int calc_cl(float letter_count, float word_count, float sent_count)
 {
     float L = letter_count * 100 / word_count;
     float S = sent_count * 100 / word_count;
-    //printf("L is %f\n", L);
-    //printf("S is %f\n", S);
     int cl_index = round(0.0588 * L - 0.296 * S - 15.8);
     return cl_index;
 }
